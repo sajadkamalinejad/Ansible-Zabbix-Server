@@ -1,0 +1,20 @@
+  - name: remove previous zabbix config
+    file:
+      path: /etc/nginx/conf.d/zabbix.conf
+      state: absent
+
+  - name: restore zabbix config
+    template: src=zabbix_server.conf dest=/etc/zabbix/zabbix_server.conf
+
+  - name: restart zabbix services
+    service:
+      name: "{{ item }}"
+      state: restarted
+      enabled: true
+    become: true
+    loop:
+      - mariadb
+      - nginx
+      - php7.4-fpm
+      - zabbix-server
+      - zabbix-agent

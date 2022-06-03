@@ -1,4 +1,6 @@
-hostname: example.com
-project_name: example.com
+hostname: zabbix.example.com
 nginx_port: 80
+mysql_zabbix_database: zabbix_db
 mysql_root_password: sunset@123
+mysql_zabbix_user: zabbix
+mysql_zabbix_password: sunset@123

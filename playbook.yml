@@ -33,5 +33,7 @@
   become: true
   roles:
     - zabbix_mysql
+    - zabbix_nginx
+    - zabbix_settings
 
 
