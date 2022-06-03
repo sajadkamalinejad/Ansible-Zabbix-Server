@@ -9,4 +9,4 @@
       state: absent
   
   - name: config zabbix nginx
-    template: src=zabbix.conf dest=/etc/nginx/conf.d/zabbix.conf
+    template: src=zabbix_nginx.conf dest=/etc/nginx/conf.d/zabbix_nginx.conf

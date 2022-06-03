@@ -5,16 +5,4 @@
 
   - name: restore zabbix config
     template: src=zabbix_server.conf dest=/etc/zabbix/zabbix_server.conf
-
-  - name: restart zabbix services
-    service:
-      name: "{{ item }}"
-      state: restarted
-      enabled: true
-    become: true
-    loop:
-      - mariadb
-      - nginx
-      - php7.4-fpm
-      - zabbix-server
-      - zabbix-agent
+    notify: restart_zabbix_services
